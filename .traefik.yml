@@ -1,0 +1,10 @@
+displayName: Secure Link
+summary: Checks authenticity of requested links, protect resources from unauthorized access.
+type: middleware
+import: github.com/trois-six/plugin-securelink
+compatibility: TODO
+testData:
+  secret: enigma
+  protectedPaths:
+    - "/video/"
+    - "/playlist"
