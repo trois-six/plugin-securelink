@@ -62,6 +62,7 @@ func (s *secureLink) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 			rw.WriteHeader(http.StatusForbidden)
 			return
 		}
+		req.URL.Path = path + url
 	}
 	s.next.ServeHTTP(rw, req)
 }
