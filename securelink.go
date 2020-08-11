@@ -5,7 +5,6 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -77,8 +76,8 @@ func (s *secureLink) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 				url = string([]rune(req.URL.Path)[len([]rune(path))+len([]rune(hash))+len("/"):])
 				computedHash = md5.Sum([]byte(url + s.secret))
 				req.URL.Path = path + url
+				req.RequestURI = req.URL.RequestURI()
 			} else {
-				log.Println(req.URL.Path)
 				hashQuery, ok := req.URL.Query()["md5"]
 				if !ok {
 					rw.WriteHeader(http.StatusForbidden)
@@ -120,6 +119,5 @@ func (s *secureLink) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 			}
 		}
 	}
-	log.Println(req.URL.Path)
 	s.next.ServeHTTP(rw, req)
 }
