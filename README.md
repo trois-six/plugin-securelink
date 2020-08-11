@@ -37,7 +37,7 @@ hash=$(echo -n "${path}${expire}${secret}" | md5sum | awk '{ print $1 }')
 ```
 Imagine that you want to expose this resource for 120s, expire will be:
 ```shell
-expire=$(($(date "+%s") + ${ttl})
+expire=$(($(date "+%s") + 120))
 ```
 This link will be available only for 120s.
 
