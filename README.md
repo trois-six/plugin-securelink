@@ -1,6 +1,6 @@
 # Secure Link
 
-This [Traefik](https://github.com/containous/traefik) plugin is as middleware which checks the authenticity of requested links and protects resources from unauthorized access. Authenticity is verified by comparing the checksum value passed in a request with the value computed for the request, using the shared secret.
+This [Traefik](https://github.com/traefik/traefik) plugin is as middleware which checks the authenticity of requested links and protects resources from unauthorized access. Authenticity is verified by comparing the checksum value passed in a request with the value computed for the request, using the shared secret.
 This middleware is inspired by [this](https://github.com/blake/secure-link-filter) WebAssembly filter.
 Traefik sends an HTTP `403 Forbidden` response when the hash doesn't match for protected paths.
 
