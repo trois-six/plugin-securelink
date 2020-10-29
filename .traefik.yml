@@ -7,8 +7,8 @@ compatibility: TODO
 
 summary: Checks authenticity of requested links, protect resources from unauthorized access.
 
-iconPath: icon.png
-bannerPath: banner.png
+iconPath: assets/icon.png
+bannerPath: assets/banner.png
 
 testData:
   secret: enigma
