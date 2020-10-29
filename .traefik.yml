@@ -1,8 +1,15 @@
 displayName: Secure Link
-summary: Checks authenticity of requested links, protect resources from unauthorized access.
 type: middleware
+
 import: github.com/trois-six/plugin-securelink
+
 compatibility: TODO
+
+summary: Checks authenticity of requested links, protect resources from unauthorized access.
+
+iconPath: icon.png
+bannerPath: banner.png
+
 testData:
   secret: enigma
   protectedPaths:
